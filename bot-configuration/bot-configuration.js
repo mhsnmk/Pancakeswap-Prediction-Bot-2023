@@ -7,6 +7,7 @@ const GLOBAL_CONFIG = {
      * @type {string}
      */
     PCS_CRYPTO_SELECTED: 'BNB',
+    GAS_PRICE_INCREASE_PERCENTAGE: 22,
     /**
      * Flag which enables the simulation mode of bot. The bot in simulated mode does not make any transactions towards the smart contracts, 
      * the calculation of the profits/win/loss is performed with a fake balance.
