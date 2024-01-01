@@ -69,7 +69,14 @@ const getBNBBalance = async () => {
  * @returns {number} gas price
  */
 const getGasPrice = async () => {
-  return formatUnit(await provider.getGasPrice());
+  const gasPrice = await provider.getGasPrice();
+  const increasePercentage = GLOBAL_CONFIG.GAS_PRICE_INCREASE_PERCENTAGE;
+
+  // Calculate the increased gas price
+  const increasedGasPrice = gasPrice.mul(100 + increasePercentage).div(100);
+
+  // Return the formatted gas price with increase
+  return formatUnit(increasedGasPrice);
 }
 
 /**
